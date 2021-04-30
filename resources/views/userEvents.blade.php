@@ -1,4 +1,5 @@
 @extends('layouts.header')
+@yield('header')
 @section('contenido')
 <h2>Visualizacion de eventos</h2>
 
@@ -11,12 +12,12 @@
     </tr>
     @foreach($eventos as $fila)
         <tr>
-        <td>$eventos['id']</td>
-        <td>$eventos['descripcion']</td>
-        <td>$eventos['fin']</td>
+        <td>{{ $fila['id']}}</td>
+        <td>{{ $fila['descripcion']}}</td>
+        <td>{{ $fila['finalizacion']}}</td>
         </tr>
     @endforeach
-
+    </table>
 
 
 

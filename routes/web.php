@@ -2,8 +2,8 @@
 
 use Illuminate\Support\Facades\Auth;
 
-use Illuminate\Support\Facades\Route;
 use App\Providers\RouteServiceProvider;
+use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,7 +33,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 Auth::routes();
 
-Route::get('/userEvents', 'EventsController@ShowEvents')->name('userEvents');
+Route::get('/userEvents', 'EventsController@index')->name('events.index');
 
 Route::get('/baja', function(){
     return view('baja');

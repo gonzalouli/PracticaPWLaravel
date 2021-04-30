@@ -11,15 +11,14 @@ use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Jetstream\HasTeams;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Support\Facades\DB;
-
 class Eventos extends Model
 {
     use HasFactory;
-    protected $table = 'Eventos';
+    protected $table = 'eventos';
 
     public function giveEvents()
-    {
-        $events = DB::table('events')->where('user_id', $this->attributes['id']);
+    {   
+        $events = DB::table('eventos')->where('user_id', $this->attributes['id']);
         return $events;
     }
 

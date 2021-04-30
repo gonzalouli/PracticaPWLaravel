@@ -17,6 +17,7 @@ class CreateEventosTable extends Migration
             $table->id()->unique();
             $table->json('usuarios');
             $table->string('descripcion');
+            $table->string('finalizacion');
             $table->boolean('done');
             $table->timestamps();
         });

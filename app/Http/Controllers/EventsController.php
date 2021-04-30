@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Eventos;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class EventsController extends Controller
 {
 
     /**
@@ -13,10 +13,12 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function ShowEvents()
-    {
-        $eventos = $this->giveEvents();
-        return view('userEvents',['eventos' => $eventos]);
+    public function index()
+    {   
+        //$eventos = $this->giveEvents();
+        $eventos = Eventos::all();
+        //return view('userEvents', compact("eventos"));
+        return view('userEvents')->with('eventos', $eventos);
     }
 
 
