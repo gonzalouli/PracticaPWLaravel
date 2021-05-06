@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBajaTable extends Migration
+class CreateUsereventsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,19 +13,14 @@ class CreateBajaTable extends Migration
      */
     public function up()
     {
-        Schema::create('Baja', function (Blueprint $table) {
+        Schema::create('UserEvents', function (Blueprint $table) {
             $table->id();
-            $table->integer('userid');
-            $table->string('motivo');
-            $table->string('inicio');
-            $table->string('final');
-            $table->string('observaciones');
-            $table->boolean('aceptada')->default(0);
-
-
-
-
+            $table->integer('iduser');
+            $table->bigInteger('idevent');
             $table->timestamps();
+            $table->primary('iduser');
+            $table->primary('idevent');
+
         });
     }
 
@@ -36,6 +31,6 @@ class CreateBajaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Baja');
+        Schema::dropIfExists('UserEvents');
     }
 }

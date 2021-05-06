@@ -23,7 +23,7 @@ class Fichaje extends Model
         $hoy = getdate();
         $user = Auth::User();
         $entrada = $hoy['hours'].":".$hoy['minutes'];
-        DB::table('fichaje')->insert(['dni' => $user->attributes['dni'],
+        DB::table('fichaje')->insert(['dni' => $user->dni,
                                                 'fecha' => date('Y-m-d'),
                                                 'entrada' => $entrada]);
     }
@@ -32,7 +32,7 @@ class Fichaje extends Model
         $hoy = getdate();
         $user = Auth::User();
         $salida = $hoy['hours'].":".$hoy['minutes'];
-        DB::table('fichaje')->where( 'dni', $user->attributes['dni'])->update(['salida' => $salida ]);
+        DB::table('fichaje')->where( 'dni', $user->dni)->update(['salida' => $salida ]);
     }
 
 

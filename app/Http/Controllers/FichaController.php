@@ -10,15 +10,12 @@ use Illuminate\Http\Request;
 class FichaController extends Controller
 {
     public function fichaEntrada(){
-        $user = User::getUser();
-        Fichaje::fichaEntrada($user);
+        Fichaje::fichaEntrada();
         return redirect()->route('dashboard');
     }
 
     public function fichaSalida(){
-        
-        $user = auth()->user();
-        Fichaje::fichaSalida($user);
+        Fichaje::fichaSalida();
         return redirect()->route('dashboard');
     }
 }

@@ -15,10 +15,10 @@ class CreateVacacionesTable extends Migration
     {
         Schema::create('Vacaciones', function (Blueprint $table) {
             $table->id();
-            $table->string("dni");
+            $table->bigInteger("iduser")->default(-1);
             $table->string('inicio');
             $table->string('fin');
-            $table->boolean('aceptada');
+            $table->boolean('aceptada')->default(0);
             $table->timestamps();
         });
     }

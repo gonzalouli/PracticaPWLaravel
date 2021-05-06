@@ -15,7 +15,6 @@ class CreateEventosTable extends Migration
     {
         Schema::create('Eventos', function (Blueprint $table) {
             $table->id()->unique();
-            $table->json('usuarios');
             $table->string('descripcion');
             $table->string('finalizacion');
             $table->boolean('done');

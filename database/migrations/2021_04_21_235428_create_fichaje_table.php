@@ -18,7 +18,7 @@ class CreateFichajeTable extends Migration
             $table->string('dni');
             $table->string('fecha');
             $table->string('entrada');
-            $table->string('salida');
+            $table->string('salida')->default('');
             $table->timestamps();
         });
     }

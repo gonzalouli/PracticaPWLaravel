@@ -7,11 +7,12 @@ use Illuminate\Http\Request;
 use App\Models;
 use App\Models\Baja;
 use App\Http\Requests\BajaRequest;
-
 class SolBajaController extends Controller
 {
-    function solicitud(BajaRequest $request){
+    function solicitud(Request $request){
+        
+        //dd($data);
         Baja::saveBaja($request);
-        return route('/dashboard') ;    
+        return redirect()->route('dashboard');
     }
 }

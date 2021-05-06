@@ -2,39 +2,39 @@
 $hoy = date("d/m/Y")
 ?>
 
-<form action="{{url('solicitudBaja')}}" method="POST">
-    {{ csrf_field() }}
+<form action="/baja/solicitada" method="POST">
+  {{ csrf_field() }}
   <div class="form-group row">
-    <label for="inputvehiculo" class="col-sm-2 col-form-label">Motivo de la baja</label>
+    <label  class="col-sm-2 col-form-label">Motivo de la baja</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="motivo">
+      <input type="text" class="form-control" name="motivo">
     </div>
   </div>
   
   <div class="form-group row">
-    <label for="inputmodelo" class="col-sm-2 col-form-label">Fecha de inicio</label>
+    <label  class="col-sm-2 col-form-label">Fecha de inicio</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="inicio" placeholder="{{$hoy}}" required>
+      <input type="text" class="form-control" name="inicio" placeholder="{{$hoy}}" required>
     </div>
   </div>
 
   <div class="form-group row">
-    <label for="inputPuertas" class="col-sm-2 col-form-label">Fecha de fin</label>
+    <label class="col-sm-2 col-form-label">Fecha de fin</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="fin">
+      <input type="text" class="form-control" name="fin">
     </div>
   </div>
 
   <div class="form-group row">
-    <label for="inputLuces" class="col-sm-2 col-form-label">Observaciones</label>
+    <label class="col-sm-2 col-form-label">Observaciones</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="observaciones" >
+      <input type="text" class="form-control" name="observaciones" >
     </div>
   </div>
 
   <div class="form-group row">
     <div class="col-sm-10">
-      <button type="submit" class="btn btn-primary">Sign in</button>
+      <input type="submit" class="btn btn-primary"\>
     </div>
   </div>
 </form>

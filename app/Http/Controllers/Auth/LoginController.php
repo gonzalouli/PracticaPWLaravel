@@ -27,9 +27,10 @@ class LoginController extends Controller
         if ( !$user->isAdmin() ) 
         {// do your magic here
             return redirect()->route('dashboard');
+        }else
+        {
+            return redirect('/home');
         }
-
-        return redirect('/home');
     }
 
     /**

@@ -39,12 +39,10 @@ Route::get('/baja', function(){
     return view('solbaja');
 })->name('baja');
 
-//Route::match(['get', 'post'], 'input', 'solicitudBaja@solicitar');
-Route::post('/baja/solicitada','SolBajaController@solicitar')->name('solicitudBaja');
-
-Route::get('/vacaciones', function(){
-    return view('vacaciones');
-})->name('vacaciones');
+Route::post('/baja/solicitada', 
+'SolBajaController@solicitud'
+//dd('hola');
+);
 
 Route::get('/ficha', function(){
     return view('fichaje');
@@ -59,4 +57,4 @@ Route::get('/vacaciones', function(){
     return view('solvacaciones');
 })->name('SolVacaciones');
 
-Route::post('vacaciones/tramo',"SolVacacionesController@tramo")->name('tramovacaciones');
+Route::post('vacaciones/solicitud',"SolVacacionesController@solicitud")->name('tramovacaciones');

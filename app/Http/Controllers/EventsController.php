@@ -14,9 +14,8 @@ class EventsController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
-    {   
-        //$eventos = $this->giveEvents();
-        $eventos = Eventos::all();
+    {   $events = new Eventos();
+        $eventos = $events->giveEvents();
         //return view('userEvents', compact("eventos"));
         return view('userEvents')->with('eventos', $eventos);
     }
