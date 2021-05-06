@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateVacacionesTable extends Migration
+class CreateBajaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,17 @@ class CreateVacacionesTable extends Migration
      */
     public function up()
     {
-        Schema::create('Vacaciones', function (Blueprint $table) {
+        Schema::create('Baja', function (Blueprint $table) {
             $table->id();
-            $table->string("dni");
-            $table->string('inicio');
-            $table->string('fin');
+            $table->string('motivo');
+            $table->date('inicio');
+            $table->date('final');
+            $table->string('observaciones');
+            $table->boolean('aceptada');
+
+
+
+
             $table->timestamps();
         });
     }
@@ -29,6 +35,6 @@ class CreateVacacionesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Vacaciones');
+        Schema::dropIfExists('Baja');
     }
 }

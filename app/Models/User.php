@@ -69,6 +69,8 @@ class User extends Authenticatable
         return $teamUser !== null && $rol=="Admin";
     }
 
-
+    public function getUser(){
+        return DB::table('users')->where('user_id', $this->attributes['id'])->first();
+    }
 
 }

@@ -8,7 +8,7 @@
     @endunless
 </head>
 <body>
-    @yield('contenido');
+    @yield('contenido')
 </body>
 </html>
 

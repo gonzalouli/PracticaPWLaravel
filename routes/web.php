@@ -36,16 +36,27 @@ Auth::routes();
 Route::get('/userEvents', 'EventsController@index')->name('events.index');
 
 Route::get('/baja', function(){
-    return view('baja');
+    return view('solbaja');
 })->name('baja');
+
+//Route::match(['get', 'post'], 'input', 'solicitudBaja@solicitar');
+Route::post('/baja/solicitada','SolBajaController@solicitar')->name('solicitudBaja');
 
 Route::get('/vacaciones', function(){
     return view('vacaciones');
 })->name('vacaciones');
 
 Route::get('/ficha', function(){
-    return view('ficha');
-})->name('ficha');
+    return view('fichaje');
+})->name('fichar');
 
+Route::post('fichaje/entrada',"FichaController@fichaEntrada")->name('fentrada');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::post('fichaje/salida',"FichaController@fichaSalida")->name('fsalida');
+
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/vacaciones', function(){
+    return view('solvacaciones');
+})->name('SolVacaciones');
+
+Route::post('vacaciones/tramo',"SolVacacionesController@tramo")->name('tramovacaciones');

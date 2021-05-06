@@ -14,20 +14,17 @@
                 </a>
             </div>
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                 <a class="underline text-sm text-gray-600 hover:text-gray-900" type="button" >
-                 {{--  href="{{ route('baja') }}" --}}
+                 <a class="underline text-sm text-gray-600 hover:text-gray-900" type="button" href="{{ route('baja') }}">
                     {{ __('Solicitar baja') }}
                 </a>
             </div>
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                 <a class="underline text-sm text-gray-600 hover:text-gray-900" type="button" >
-                 {{--  href="{{ route('vacaciones') }}" --}}
+                 <a class="underline text-sm text-gray-600 hover:text-gray-900" type="button" href="{{ route('SolVacaciones') }}">
                     {{ __('Solicitar vacaciones') }}
                 </a>
             </div>
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                 <a class="underline text-sm text-gray-600 hover:text-gray-900" type="button" >
-                 {{--  href="{{ route('fichar') }}" --}}
+                 <a class="underline text-sm text-gray-600 hover:text-gray-900" type="button" href="{{ route('fichar') }}" >
                     {{ __('Fichar') }}
                 </a>
             </div>

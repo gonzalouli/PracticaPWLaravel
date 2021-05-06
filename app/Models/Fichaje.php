@@ -4,7 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Foundation\Auth\User;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
@@ -17,19 +19,20 @@ class Fichaje extends Model
     protected $table='fichaje';
 
 
-    public function fichaEntrada(){
+    public static function fichaEntrada(){
         $hoy = getdate();
+        $user = Auth::User();
         $entrada = $hoy['hours'].":".$hoy['minutes'];
-        $Fichaje = DB::table('fichaje')->insert(['dni' => $this->attributes['dni'],
+        DB::table('fichaje')->insert(['dni' => $user->attributes['dni'],
                                                 'fecha' => date('Y-m-d'),
                                                 'entrada' => $entrada]);
     }
 
-    public function fichaSalida(){
+    public static function fichaSalida(){
         $hoy = getdate();
+        $user = Auth::User();
         $salida = $hoy['hours'].":".$hoy['minutes'];
-
-        $fichaje = DB::table('fichaje')->where( 'dni', $this->attributes['dni'])->update(['salida' => $salida ]);
+        DB::table('fichaje')->where( 'dni', $user->attributes['dni'])->update(['salida' => $salida ]);
     }
 
 
